@@ -65,10 +65,10 @@ labels and allows for complex expressions using logical OR and AND operations.
    complex_label_expression = builder.build()
    ```
 
-The label builder could be used with any data, a fully working example can be found under `telicent_labels/telicent_model.py`,
+The label builder could be used with any data, a fully working example can be found under `ianode_labels/ianode_model.py`,
 data validation is enforced by enums which reference labels and model which verifies the user inputs.
 
-In the context of default policy, the label builder would extract a subset of data from Telicent Policy/Model, the fields of interest described
+In the context of default policy, the label builder would extract a subset of data from IANode Policy/Model, the fields of interest described
 by an enum are then passed to the builder where they get transformed to a fully valid label representation that can
 be evaluated by Access.
 

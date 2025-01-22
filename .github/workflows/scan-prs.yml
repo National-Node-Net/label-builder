@@ -6,6 +6,6 @@ on:
 
 jobs:
   scan_pr:
-    uses: telicent-oss/shared-workflows/.github/workflows/python-generate-and-scan-application.yml@main
+    uses: NationalDigitalTwin/shared-workflows/.github/workflows/python-generate-and-scan-application.yml@main
     with:
       SCAN_NAME: ${{ github.run_number }}

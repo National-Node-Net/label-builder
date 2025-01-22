@@ -1,31 +1,31 @@
-### Documentation for Telicent Header Model Implementation
+### Documentation for IANode Header Model Implementation
 
 #### Overview
 
-The Telicent Header Model, as part of a data processing pipeline, facilitates the creation and management of security labels. 
+The IANode Header Model, as part of a data processing pipeline, facilitates the creation and management of security labels. 
 The implementation involves creating a model that dynamically builds 
 security labels, which can then be attached to data records. This process ensures that each record complies with specified 
 security and access policies.
 
 #### Classes 
 
-1. **TelicentMixin Class**: An abstract base model providing core functionality
+1. **IANodeMixin Class**: An abstract base model providing core functionality
    - `build_security_labels(self)`: An abstract method that must be implemented by
       subclasses to utilize the SecurityLabelBuilder for constructing security 
       labels based on model attributes.
      
-2. **TelicentModel Class (inherits TelicentMixin)**: Represents the Telicent policy with various attributes.
+2. **IANodeModel Class (inherits IANodeMixin)**: Represents the IANode policy with various attributes.
    - Pro 
 
 
-#### Example: Using Telicent Header Model with Adapter
+#### Example: Using IANode Header Model with Adapter
 
 ```python
 import requests
-from telicent_lib import Adapter
-from telicent_lib.access import TelicentModel
-from telicent_lib.records import Record, RecordUtils
-from telicent_lib.sinks import KafkaSink
+from ianode_lib import Adapter
+from ianode_lib.access import IANodeModel
+from ianode_lib.records import Record, RecordUtils
+from ianode_lib.sinks import KafkaSink
 
 def records_from_file() -> list[str]:
     url = "https://test.com/wordlist.10000"
@@ -36,14 +36,14 @@ def records_from_file() -> list[str]:
 
 # Create a sink and an adapter
 sink = KafkaSink(topic="adapter-demo", broker="localhost:9092")
-adapter = Adapter(target=sink, name="Demo Adapter with Telicent Policy", source_name="Word List MIT")
+adapter = Adapter(target=sink, name="Demo Adapter with IANode Policy", source_name="Word List MIT")
 
 data_header = {
-    # Telicent policy details...
+    # IANode policy details...
 }
 
 # Validates data header against a model
-data_header_obj =  TelicentModel(**data_header) 
+data_header_obj =  IANodeModel(**data_header) 
 # Builds labels from data header object
 security_labels = data_header_obj.build_security_labels()
 
@@ -73,15 +73,15 @@ if __name__ == '__main__':
    import json
    from pathlib import Path
    from typing import Iterable
-   from telicent_lib import AutomaticAdapter, Record
-   from telicent_lib.sinks import KafkaSink, Serializers
+   from ianode_lib import AutomaticAdapter, Record
+   from ianode_lib.sinks import KafkaSink, Serializers
    
    data_header = {
-       # Telicent policy details...
+       # IANode policy details...
    }
   
    # Validates data header against a model
-   data_header_obj =  TelicentModel(**data_header) 
+   data_header_obj =  IANodeModel(**data_header) 
    # Builds labels from data header object
    security_labels = data_header_obj.build_security_labels()
    

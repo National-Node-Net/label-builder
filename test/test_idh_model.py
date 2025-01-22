@@ -1,6 +1,6 @@
 import unittest
 
-from telicent_labels import IDHModel
+from ianode_labels import IDHModel
 
 
 class IDHModelTestCase(unittest.TestCase):
@@ -13,18 +13,18 @@ class IDHModelTestCase(unittest.TestCase):
             "dataSource": "Tom Test",
             "access": {
                 "classification": "O",
-                "allowedOrgs": ["Telicent"],
+                "allowedOrgs": ["NDTP"],
                 "allowedNats": ["GBR"],
-                "groups": ["urn:telicent:groups:developer"]
+                "groups": ["urn:ndtp:groups:developer"]
             },
             "ownership":{
-                "originatingOrg": "Telicent"
+                "originatingOrg": "NDTP"
             }
         }
 
         security_label = IDHModel(**label).build_security_labels()
-        self.assertEqual(security_label, "(classification=O&(permitted_organisations=Telicent)&"
-                                         "(permitted_nationalities=GBR)&urn:telicent:groups:developer:and)")
+        self.assertEqual(security_label, "(classification=O&(permitted_organisations=NDTP)&"
+                                         "(permitted_nationalities=GBR)&urn:ndtp:groups:developer:and)")
     def test_simple_label_multi_group(self):
         label = {
             "apiVersion": "v1alpha",
@@ -34,19 +34,19 @@ class IDHModelTestCase(unittest.TestCase):
             "dataSource": "Tom Test",
             "access": {
                 "classification": "O",
-                "allowedOrgs": ["Telicent"],
+                "allowedOrgs": ["NDTP"],
                 "allowedNats": ["GBR"],
-                "groups": ["urn:telicent:groups:developer", "urn:telicent:groups:africa"]
+                "groups": ["urn:ndtp:groups:developer", "urn:ndtp:groups:africa"]
             },
             "ownership":{
-                "originatingOrg": "Telicent"
+                "originatingOrg": "NDTP"
             }
         }
 
         security_label = IDHModel(**label).build_security_labels()
-        self.assertEqual(security_label, "(classification=O&(permitted_organisations=Telicent)&"
-                                         "(permitted_nationalities=GBR)&urn:telicent:groups:developer:and&"
-                                         "urn:telicent:groups:africa:and)")
+        self.assertEqual(security_label, "(classification=O&(permitted_organisations=NDTP)&"
+                                         "(permitted_nationalities=GBR)&urn:ndtp:groups:developer:and&"
+                                         "urn:ndtp:groups:africa:and)")
     def test_simple_label_multi_nationality(self):
         label = {
             "apiVersion": "v1alpha",
@@ -56,19 +56,19 @@ class IDHModelTestCase(unittest.TestCase):
             "dataSource": "Tom Test",
             "access": {
                 "classification": "O",
-                "allowedOrgs": ["Telicent"],
+                "allowedOrgs": ["NDTP"],
                 "allowedNats": ["GBR", "FRA"],
-                "groups": ["urn:telicent:groups:developer", "urn:telicent:groups:africa"]
+                "groups": ["urn:ndtp:groups:developer", "urn:ndtp:groups:africa"]
             },
             "ownership":{
-                "originatingOrg": "Telicent"
+                "originatingOrg": "NDTP"
             }
         }
 
         security_label = IDHModel(**label).build_security_labels()
-        self.assertEqual(security_label, "(classification=O&(permitted_organisations=Telicent)&"
+        self.assertEqual(security_label, "(classification=O&(permitted_organisations=NDTP)&"
                                          "(permitted_nationalities=GBR|permitted_nationalities=FRA)&"
-                                         "urn:telicent:groups:developer:and&urn:telicent:groups:africa:and)")
+                                         "urn:ndtp:groups:developer:and&urn:ndtp:groups:africa:and)")
     def test_simple_label_multi_organisation(self):
         label = {
             "apiVersion": "v1alpha",
@@ -78,20 +78,20 @@ class IDHModelTestCase(unittest.TestCase):
             "dataSource": "Tom Test",
             "access": {
                 "classification": "O",
-                "allowedOrgs": ["Telicent", "NHS"],
+                "allowedOrgs": ["NDTP", "NHS"],
                 "allowedNats": ["GBR", "FRA"],
-                "groups": ["urn:telicent:groups:developer", "urn:telicent:groups:africa"]
+                "groups": ["urn:ndtp:groups:developer", "urn:ndtp:groups:africa"]
             },
             "ownership":{
-                "originatingOrg": "Telicent"
+                "originatingOrg": "NDTP"
             }
         }
 
         security_label = IDHModel(**label).build_security_labels()
         self.assertEqual(security_label, "(classification=O&"
-                                         "(permitted_organisations=Telicent|permitted_organisations=NHS)&"
+                                         "(permitted_organisations=NDTP|permitted_organisations=NHS)&"
                                          "(permitted_nationalities=GBR|permitted_nationalities=FRA)&"
-                                         "urn:telicent:groups:developer:and&urn:telicent:groups:africa:and)")
+                                         "urn:ndtp:groups:developer:and&urn:ndtp:groups:africa:and)")
 
     def test_error_label_no_classification(self):
         label = {
@@ -102,12 +102,12 @@ class IDHModelTestCase(unittest.TestCase):
             "dataSource": "Tom Test",
             "access": {
                 "classification": "",
-                "allowedOrgs": ["Telicent", "NHS"],
+                "allowedOrgs": ["NDTP", "NHS"],
                 "allowedNats": ["GBR", "FRA"],
-                "groups": ["urn:telicent:groups:developer", "urn:telicent:groups:africa"]
+                "groups": ["urn:ndtp:groups:developer", "urn:ndtp:groups:africa"]
             },
             "ownership":{
-                "originatingOrg": "Telicent"
+                "originatingOrg": "NDTP"
             }
         }
         with self.assertRaises(ValueError) as context:
@@ -123,12 +123,12 @@ class IDHModelTestCase(unittest.TestCase):
             "dataSource": "Tom Test",
             "access": {
                 "classification": "P",
-                "allowedOrgs": ["Telicent", "NHS"],
+                "allowedOrgs": ["NDTP", "NHS"],
                 "allowedNats": ["GBR", "FRA"],
-                "groups": ["urn:telicent:groups:developer", "urn:telicent:groups:africa"]
+                "groups": ["urn:ndtp:groups:developer", "urn:ndtp:groups:africa"]
             },
             "ownership":{
-                "originatingOrg": "Telicent"
+                "originatingOrg": "NDTP"
             }
         }
         with self.assertRaises(ValueError) as context:
@@ -149,7 +149,7 @@ class IDHModelTestCase(unittest.TestCase):
                 "groups": []
             },
             "ownership":{
-                "originatingOrg": "Telicent"
+                "originatingOrg": "NDTP"
             }
         }
 
@@ -168,7 +168,7 @@ class IDHModelTestCase(unittest.TestCase):
 
             },
             "ownership":{
-                "originatingOrg": "Telicent"
+                "originatingOrg": "NDTP"
             }
         }
 

@@ -1,6 +1,8 @@
-from enum import Enum
-
-from telicent_labels import security_labels as security
+from ianode_labels.idh_model import IDHModel
+from ianode_labels.security_labels import Label, MultiValueLabel, SecurityLabelBuilder, SingleValueLabel
+from ianode_labels.ianode_model import IANodeModel
+from ianode_labels.ianodev1 import IANodeLabelsV1
+from ianode_labels.ianodev2 import IANodeSecurityLabelsV2
 
 __license__ = """
 Copyright (c) Telicent Ltd.
@@ -19,11 +21,13 @@ limitations under the License.
 """
 
 
-class TelicentLabelsV1(Enum):
-    """
-    Representation of simplified Telicent model suitable for SecurityLabelbuilder,
-    simplified for the CORE environment
-    """
-    PERMITTED_ORGANISATIONS = security.MultiValueLabel("deployed_organisation", "array")
-    PERMITTED_NATIONALITIES = security.MultiValueLabel("nationality", "array")
-    CLASSIFICATION = security.SingleValueLabel("clearance", "str")
+__all__ = [
+    "SecurityLabelBuilder",
+    "IANodeSecurityLabelsV2",
+    "IANodeLabelsV1",
+    "MultiValueLabel",
+    "SingleValueLabel",
+    "Label",
+    "IANodeModel",
+    "IDHModel"
+]

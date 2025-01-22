@@ -5,8 +5,8 @@ from typing import Annotated
 
 from pydantic import AwareDatetime, BaseModel, PlainSerializer, field_validator
 
-from telicent_labels.security_labels import SecurityLabelBuilder
-from telicent_labels.telicentv2 import TelicentSecurityLabelsV2
+from ianode_labels.security_labels import SecurityLabelBuilder
+from ianode_labels.ianodev2 import IANodeSecurityLabelsV2
 
 __license__ = """
 Copyright (c) Telicent Ltd.
@@ -30,13 +30,13 @@ DEFAULT_OPTIONAL_DT = datetime(2023, 12, 14, 0, 0, 0, tzinfo=timezone.utc)
 SerialisableDt = Annotated[AwareDatetime, PlainSerializer(lambda x: x.isoformat(), return_type=str, when_used="always")]
 
 
-class TelicentMixin(BaseModel, ABC):
+class IANodeMixin(BaseModel, ABC):
     @abstractmethod
     def build_security_labels(self):
         pass
 
 
-class TelicentModel(TelicentMixin):
+class IANodeModel(IANodeMixin):
     apiVersion: str | None = "v1alpha"
     specification: str | None = "***REDACTED***"
     identifier: str
@@ -73,10 +73,10 @@ class TelicentModel(TelicentMixin):
     def build_security_labels(self):
         builder = SecurityLabelBuilder()
 
-        builder.add(TelicentSecurityLabelsV2.CLASSIFICATION.value, self.classification)
-        builder.add_multiple(TelicentSecurityLabelsV2.PERMITTED_ORGANISATIONS.value, *self.permittedOrgs)
-        builder.add_multiple(TelicentSecurityLabelsV2.PERMITTED_NATIONALITIES.value, *self.permittedNats)
-        builder.add_multiple(TelicentSecurityLabelsV2.AND_GROUPS.value, *self.andGroups)
-        builder.add_multiple(TelicentSecurityLabelsV2.OR_GROUPS.value, *self.orGroups)
+        builder.add(IANodeSecurityLabelsV2.CLASSIFICATION.value, self.classification)
+        builder.add_multiple(IANodeSecurityLabelsV2.PERMITTED_ORGANISATIONS.value, *self.permittedOrgs)
+        builder.add_multiple(IANodeSecurityLabelsV2.PERMITTED_NATIONALITIES.value, *self.permittedNats)
+        builder.add_multiple(IANodeSecurityLabelsV2.AND_GROUPS.value, *self.andGroups)
+        builder.add_multiple(IANodeSecurityLabelsV2.OR_GROUPS.value, *self.orGroups)
 
         return builder.build()

@@ -1,6 +1,6 @@
 from enum import Enum
 
-from telicent_labels.security_labels import MultiValueLabel, SingleValueLabel
+from ianode_labels.security_labels import MultiValueLabel, SingleValueLabel
 
 __license__ = """
 Copyright (c) Telicent Ltd.
@@ -43,9 +43,9 @@ class OrGroups(MultiValueLabel):
         return value + ":or"
 
 
-class TelicentSecurityLabelsV2(Enum):
+class IANodeSecurityLabelsV2(Enum):
     """
-    Representation of the Telicent model suitable for SecurityLabelbuilder
+    Representation of the IANode model suitable for SecurityLabelbuilder
     """
     PERMITTED_ORGANISATIONS = MultiValueLabel(
         "permitted_organisations", "array"
