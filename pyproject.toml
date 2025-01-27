@@ -3,10 +3,10 @@ requires = ["setuptools>=61.2.0", "wheel==0.41.3", "pip-tools==7.3.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "telicent-label-builder"
+name = "ianode-label-builder"
 version = "0.1.7"
-authors = [{name = "Telicent Ltd", email = "opensource@telicent.io"}]
-description = "A helper package for creating and building security labels for telicent-lib"
+authors = [{name = "National Digital Twin Programme"}]
+description = "A helper package for creating and building security labels for ianode-lib"
 requires-python = ">=3.10"
 license = {file = "LICENSE.md"}
 readme = "README.md"
@@ -39,8 +39,8 @@ dev = [
 readme = {file = ["README.md"]}
 
 [project.urls]
-Repository = "https://github.com/telicent-oss/label-builder"
-Changelog = "https://github.com/telicent-oss/label-builder/blob/main/CHANGELOG.md"
+Repository = "https://github.com/National-Digital-Twin/label-builder"
+Changelog = "https://github.com/National-Digital-Twin/label-builder/blob/main/CHANGELOG.md"
 
 [tool.ruff]
 target-version = "py310"
@@ -88,12 +88,12 @@ universal = true
 local_partial_types = true
 no_implicit_optional = false
 ignore_missing_imports = true
-modules = ["telicent_labels", "test"]
+modules = ["ianode_labels", "test"]
 
 [tool.setuptools]
 include-package-data = true
 
 [tool.setuptools.packages.find]
-include = ["telicent_labels*"]
+include = ["ianode_labels*"]
 namespaces = true
 

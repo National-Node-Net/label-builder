@@ -1,7 +1,7 @@
-# telicent-label-builder
+# ianode-label-builder
 
 
-Telicent label builder provides useful helper classes to build and create security labels.
+IANode label builder provides useful helper classes to build and create security labels.
 
 ## Dependencies
 
@@ -11,9 +11,9 @@ Telicent label builder provides useful helper classes to build and create securi
 ## Installation
 
 ```shell
-pip install telicent-label-builder
+pip install ianode-label-builder
 ```
 
 ## Usage
 
-For documentation on how to use telicent-label-builder, please see the [documentation index](docs/index.md). 
+For documentation on how to use ianode-label-builder, please see the [documentation index](docs/index.md). 
