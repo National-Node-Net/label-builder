@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.2.0", "wheel==0.41.3", "pip-tools==7.3.0"]
+requires = ["setuptools>=61.2.0", "wheel==0.45.1", "pip-tools==7.4.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -30,9 +30,9 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = [
-    "pre-commit==3.7.0",
-    "ruff==0.4.2",
-    "mypy==1.10.0"
+    "pre-commit==4.1.0",
+    "ruff==0.9.4",
+    "mypy==1.14.1"
 ]
 
 [tool.setuptools.dynamic]
