@@ -32,7 +32,7 @@ labels and allows for complex expressions using logical OR and AND operations.
    - `add_or_expression(self, expression: str)`: Abstract method for adding complex expressions using OR logic.
    - `build(self) -> str`: Abstract method for building the final expression.
    
-5. **SecurityLabelBuilder (inherits SecurityLabelHelper)**: Core class for creating valid Security Label expressions.
+5. **SecurityLabelBuilder (inherits SecurityLabelHelper)**: Main class for creating valid Security Label expressions.
    - `__init__(self)`: Initializes the builder with empty label sets and expressions.
    - `add(self, label: Label, value: str)`: Adds a label expression. Warns if the label is already used.
    - `add_multiple(self, label: MultiValueLabel, *values)`: Adds a label expression with multiple values.

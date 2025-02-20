@@ -3,7 +3,7 @@
 #### Overview
 
 IANode Security Labels provide enumerations to use with the Security Label Builder. They define specific default labels for the 
-CORE environment. The system supports multiple and single value labels, 
+IANode environment. The system supports multiple and single value labels, 
 as well as complex group logic.
 
 > ### ⚠️ Warning
@@ -11,7 +11,7 @@ as well as complex group logic.
 
 #### Classes and Enums
 
-1. **IANodeSecurityLabelsV1 (Enum)**: Represents a simplified version of the default IANode model used in the CORE environment.
+1. **IANodeSecurityLabelsV1 (Enum)**: Represents a simplified version of the default IANode model used in the IANode environment.
    - `PERMITTED_ORGANISATIONS`: A `MultiValueLabel` for specifying multiple allowed organizations.
    - `PERMITTED_NATIONALITIES`: A `MultiValueLabel` for defining multiple permitted nationalities.
    - `CLASSIFICATION`: A `SingleValueLabel` for indicating the clearance level.
