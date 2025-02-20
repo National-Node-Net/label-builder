@@ -22,7 +22,7 @@ limitations under the License.
 class IANodeLabelsV1(Enum):
     """
     Representation of simplified IANode model suitable for SecurityLabelbuilder,
-    simplified for the CORE environment
+    simplified for the IANode environment
     """
     PERMITTED_ORGANISATIONS = security.MultiValueLabel("deployed_organisation", "array")
     PERMITTED_NATIONALITIES = security.MultiValueLabel("nationality", "array")
