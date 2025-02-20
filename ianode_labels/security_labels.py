@@ -84,7 +84,7 @@ class SecurityLabelHelper:
 
 class SecurityLabelBuilder(SecurityLabelHelper):
     """
-    Core requires all messages to have a security label.
+    All messages are required to have a security label.
 
     The Security Label Builder is a helper function to make sure Security Labels created are both valid in terms of
     syntax and valid in terms of standards

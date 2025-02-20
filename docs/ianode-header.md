@@ -9,7 +9,7 @@ security and access policies.
 
 #### Classes 
 
-1. **IANodeMixin Class**: An abstract base model providing core functionality
+1. **IANodeMixin Class**: An abstract base model providing essential functionality
    - `build_security_labels(self)`: An abstract method that must be implemented by
       subclasses to utilize the SecurityLabelBuilder for constructing security 
       labels based on model attributes.
