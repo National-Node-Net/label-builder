@@ -38,9 +38,7 @@ This is the first public release of this repository under NDTP's open-source gov
 Since this release is **pre-1.0.0**, changes may still occur that are **not fully backward-compatible**.
 
 #### Initial Features
-- Key functionality for [feature/module name]
-- Implementation of [API/component name].
-- Documentation and onboarding guidance.
+- Key functionality for adding labels to data which is used later for ABAC purposes.
 
 #### Known Limitations
 - Some components are subject to change before `1.0.0`.
