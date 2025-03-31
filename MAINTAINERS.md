@@ -25,8 +25,8 @@ The following organisations were responsible for previous development efforts on
 
 | Name | Organisation | Role | Contact |
 |------|-------------|------|---------|
-| Martin Willits | Kainos | Lead Maintainer | [ndtp@businessandtrade.gov.uk] |
-| Joshua Hughes | Kainos | Documentation Lead | [ndtp@businessandtrade.gov.uk] |
+| Martin Willits | Kainos | Lead Maintainer | ndtp@businessandtrade.gov.uk |
+| Joshua Hughes | Kainos | Documentation Lead | ndtp@businessandtrade.gov.uk |
 
 *For ongoing inquiries, please use the NDTP contact email above.*  
 
