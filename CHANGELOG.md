@@ -1,4 +1,8 @@
 # Changelog
+## Unreleased
+### Changed
+- Updated MAINTAINERS.md with updated supplier information.
+
 ## [0.1.7](https://github.com/telicent-oss/label-builder/compare/v0.1.6...v0.1.7) (2024-11-13)
 
 
