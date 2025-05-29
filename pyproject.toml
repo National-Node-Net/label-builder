@@ -31,8 +31,8 @@ classifiers = [
 [project.optional-dependencies]
 dev = [
     "pre-commit==4.2.0",
-    "ruff==0.11.2",
-    "mypy==1.15.0"
+    "ruff==0.11.12",
+    "mypy==1.16.0"
 ]
 
 [tool.setuptools.dynamic]
