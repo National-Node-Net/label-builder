@@ -10,7 +10,7 @@ At present, **there is no actively assigned supplier maintaining this repository
 In the meantime:  
 - **Bug reports and documentation feedback** will still be reviewed by NDTP.  
 - **Security vulnerabilities** should be reported via the [responsible disclosure process](./SECURITY.md).  
-- **For any queries, please contact:** **[ndtp@businessandtrade.gov.uk]** 
+- **For any queries, please contact:** **ndtp@businessandtrade.gov.uk** 
 
 Once a new supplier is engaged, this file will be updated with their details. 
 
@@ -20,8 +20,8 @@ The following organisations were responsible for previous development efforts on
 
 | Name                       | Organisation    | Role               | Contact                        |
 |----------------------------|-----------------|--------------------|--------------------------------|
-| Martin Willits             | Kainos          | Lead Maintainer    | [ndtp@businessandtrade.gov.uk] |
-| Joshua Hughes              | Kainos          | Documentation Lead | [ndtp@businessandtrade.gov.uk] |
+| Martin Willits             | Kainos          | Lead Maintainer    | ndtp@businessandtrade.gov.uk |
+| Joshua Hughes              | Kainos          | Documentation Lead | ndtp@businessandtrade.gov.uk |
 
 *For ongoing inquiries, please use the NDTP contact email above.* 
 
