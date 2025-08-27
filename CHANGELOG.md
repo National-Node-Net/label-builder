@@ -68,4 +68,3 @@ Once `1.0.0` is reached, future versions will follow **strict SemVer rules**.
 Licensed under the NDTP InnerSource Licence – Version 1.0.
 
 For full licensing terms, see [LICENSE.md](LICENSE.md).
-
