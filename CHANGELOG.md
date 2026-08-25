@@ -17,16 +17,12 @@ This project follows **Semantic Versioning (SemVer)** ([semver.org](https://semv
 
 ---
 
-## [Unreleased] 
+## [0.90.0] 2026-08-25
 
-### Added 
-- Placeholder for upcoming features and enhancements. 
+### Initial Features
 
-### Fixed 
-- Placeholder for bug fixes and security updates. 
-
-### Changed 
-- Placeholder for changes to existing functionality. 
+- Key functionality (in Python) for providing useful helper classes to build and create security labels.
+- Added SPDX headers.
 
 ---
 
