@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools>=61.2.0", "wheel==0.45.1", "pip-tools==7.3.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ianode-label-builder"
+version = "0.1.7"
+authors = [{name = "National Digital Twin Programme"}]
+description = "A helper package for creating and building security labels for ianode-lib"
+requires-python = ">=3.10"
+license = {file = "LICENSE.md"}
+readme = "README.md"
+dependencies = [
+    "pydantic"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit==4.2.0",
+    "ruff==0.11.2",
+    "mypy==1.15.0"
+]
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md"]}
+
+[project.urls]
+Repository = "https://github.com/National-Digital-Twin/label-builder"
+Changelog = "https://github.com/National-Digital-Twin/label-builder/blob/main/CHANGELOG.md"
+
+[tool.ruff]
+target-version = "py310"
+lint.select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade
+]
+lint.ignore = [
+    "C901", # too complex
+]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+line-length = 120
+
+[tool.distutils.bdist_wheel]
+universal = true
+
+[tool.mypy]
+local_partial_types = true
+no_implicit_optional = false
+ignore_missing_imports = true
+modules = ["ianode_labels", "test"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["ianode_labels*"]
+namespaces = true
+
