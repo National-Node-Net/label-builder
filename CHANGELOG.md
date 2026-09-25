@@ -6,6 +6,8 @@
 
 All notable changes to this repository will be documented in this file.
 
+Routine updates limited to patching GitHub Actions dependencies are excluded from new changelog entries, as they do not themselves change the functional behaviour of application software. Changes that alter workflow functionality, security controls or application behaviour remain reportable. Historical entries documenting GitHub Actions dependency updates are retained for reference.
+
 This project follows **Semantic Versioning (SemVer)** ([semver.org](https://semver.org/)), using the format:
 
 
